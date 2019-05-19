@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		
+		
+		
+		
+<!--指定连接数据库用的驱动，对于不同的关系数据库，其驱动是不同的，需要根据实际情况修改。  -->
+<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+<!--  指定连接数据库的路径，对于不同的关系数据库，其URL路径是不同的，需要根据实际情况修改。-->
+<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sheji_db?characterEncoding=utf-8</property>
+
+<!--  指定连接数据库的用户名和密码。-->
+<property name="hibernate.connection.username">root</property>
+
+<property name="hibernate.connection.password">root</property>
+
+
+		
+		 <!-- Echo all executed SQL to stdout -->
+	  
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+		<!-- 控制台打印并格式化sql语句 -->
+		
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 表示当前数据库语言是mysql -->
+		
+		  <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+		 
+		 <!-- 数据库没有该表的情况下可以自动生成 ，默认value =“create”-->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		
+
+		<mapping class="com.model.User"/>
+		
+		<mapping class="com.model.Xinwen"/>
+		
+		<mapping class="com.model.Keshi"/>
+		
+		<mapping class="com.model.Doctor"/>
+		
+		<mapping class="com.model.Gonggao"/>
+		
+		<mapping class="com.model.Yuyue"/>
+		
+		<mapping class="com.model.Record"/>
+		
+		<mapping class="com.model.Liuyan"/>
+		
+		<mapping class="com.model.Pic"/>
+		
+		<mapping class="com.model.Jiancha"/>
+		
+		<mapping class="com.model.Yuyue2"/>
+		
+		<mapping class="com.model.Record2"/>
+		
+		
+	</session-factory>
+</hibernate-configuration>
